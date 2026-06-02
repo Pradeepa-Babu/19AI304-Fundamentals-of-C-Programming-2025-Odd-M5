@@ -1,4 +1,4 @@
-# 19AI304-Fundamentals-of-C-Programming-2025-Odd-M5
+[# 19AI304-Fundamentals-of-C-Programming-2025-Odd-M5
 # IAPR-5- Module 5 - FoC
 ## 9. Implementation of recursion.
 ## 10. Implementation of programs using pointer arithmetic.
@@ -39,7 +39,34 @@
 ### Step 12: 
   Stop
 # Program:
+```
+#include <stdio.h>
+void swapValue(int a, int b) {
+    int temp = a;
+    a = b;
+    b = temp;
+    printf("After swap (Call by Value): %d %d\n", a, b);
+}
+void swapReference(int *a, int *b) {
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+    printf("After swap (Call by Reference): %d %d\n", *a, *b);
+}
+int main() {
+    int x, y;
+    scanf("%d %d", &x, &y);
+    printf("Before swap: %d %d\n", x, y);
+    swapValue(x, y);
+    printf("After function call (Value): %d %d\n", x, y);
+    swapReference(&x, &y);
+    printf("After function call (Reference): %d %d\n", x, y);
+    return 0;
+}
+```
 # Output:
+<img width="1369" height="723" alt="image" src="https://github.com/user-attachments/assets/1d6209b6-979a-4de7-9423-44f9be8bc5e2" />
+
 # Result: 
   Thus, the program was implemented and executed successfully, and the required output was obtained.
 
@@ -77,6 +104,30 @@
 ### Step 10:
   Stop
 # Program:
+```
+#include <stdio.h>
+
+int fib(int n) {
+    if (n == 0)
+        return 0;
+    else if (n == 1)
+        return 1;
+    else
+        return fib(n - 1) + fib(n - 2);
+}
+
+int main() {
+    int n;
+
+    scanf("%d", &n);
+
+    for (int i = 0; i < n; i++) {
+        printf("%d ", fib(i));
+    }
+
+    return 0;
+}
+```
 # Output:
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
@@ -119,7 +170,33 @@ Thus, the program was implemented and executed successfully, and the required ou
 ### Step 12:
   Stop
 # Program:
+```
+#include <stdio.h>
+
+void printEvenOdd(int current, int upper) {
+    if (current > upper)
+        return;
+
+    printf("%d ", current);
+    printEvenOdd(current + 2, upper);
+}
+
+int main() {
+    int lower, upper;
+
+    scanf("%d %d", &lower, &upper);
+
+    if (lower % 2 == 0)
+        printEvenOdd(lower, upper);
+    else
+        printEvenOdd(lower, upper);
+
+    return 0;
+}
+```
 # Output:
+<img width="1299" height="702" alt="image" src="https://github.com/user-attachments/assets/06a2daba-e96f-4389-997c-2fdbd3ac8ea4" />
+
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
 
@@ -161,7 +238,38 @@ Thus, the program was implemented and executed successfully, and the required ou
 ### Step 11:
   Stop
 # Program:
+```
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int n, *arr, sum = 0;
+
+    scanf("%d", &n);
+
+    arr = (int *)calloc(n, sizeof(int));
+
+    if (arr == NULL) {
+        printf("Memory allocation failed");
+        return 0;
+    }
+
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+        sum += arr[i];
+    }
+
+    printf("Sum = %d", sum);
+
+    free(arr);
+
+    return 0;
+}
+```
+
 # Output:
+<img width="1351" height="605" alt="image" src="https://github.com/user-attachments/assets/f082a6a1-0314-4786-9909-6812248cde88" />
+
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
 
@@ -197,6 +305,33 @@ Thus, the program was implemented and executed successfully, and the required ou
 ### Step 10:
   Stop
 # Program:
+```
+#include <stdio.h>
+
+void display(int arr[], int n) {
+    for (int i = 0; i < n; i++) {
+        printf("%d ", arr[i]);
+    }
+}
+
+int main() {
+    int n, arr[100];
+
+    scanf("%d", &n);
+
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    display(arr, n);
+
+    return 0;
+}
+```
+
 # Output:
+<img width="1323" height="672" alt="image" src="https://github.com/user-attachments/assets/109d7900-3ea3-4ec3-9315-fe58080824b4" />
+
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
+](https://github.com/Magitha001/19AI304-Fundamentals-of-C-Programming-2025-Odd-M5.git)
